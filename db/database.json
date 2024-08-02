@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "cuenta": 123456,
+            "telefono": 4125765863,
+            "cedula": 27356596,
+            "status": "ok"
+        },
+        {
+            "cuenta": 123465,
+            "telefono": 4125765863,
+            "cedula": 27123456,
+            "status": "mora"
+        },
+        {
+            "cuenta": 123564,
+            "telefono": 58412789654,
+            "cedula": 27159951,
+            "status": "ok"
+        },
+        {
+            "cuenta": 123603,
+            "telefono": 584125765863,
+            "cedula": 12684579,
+            "status": "ok"
+        },
+        {
+            "cuenta": 123657,
+            "telefono": 584125955863,
+            "cedula": 31456987,
+            "status": "mora"
+        },
+        {
+            "cuenta": 123711,
+            "telefono": 584125123953,
+            "cedula": 27356596,
+            "status": "ok"
+        },
+        {
+            "cuenta": 123765,
+            "telefono": 4125765863,
+            "cedula": 27356596,
+            "status": "ok"
+        },
+        {
+            "cuenta": 123819,
+            "telefono": 4125765863,
+            "cedula": 27356596,
+            "status": "ok"
+        },
+        {
+            "cuenta": 123873,
+            "telefono": 4125765863,
+            "cedula": 27356596,
+            "status": "ok"
+        },
+        {
+            "cuenta": 123927,
+            "telefono": 4125765863,
+            "cedula": 27356596,
+            "status": "mora"
+        }
+    ]
+}
