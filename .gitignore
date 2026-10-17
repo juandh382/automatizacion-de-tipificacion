@@ -1,1 +1,15 @@
-node_modules
+# =========================================
+# Power BI / Fabric (.pbip)
+# =========================================
+
+# Carpetas y archivos de configuración local / caché de Power BI
+**/.pbi/
+**/*.pbi.bak
+**/*.abf
+**/*.smb
+
+# Ajustes locales y credenciales del usuario
+*.user.json
+*.settings.json
+localSettings.json
+editorSettings.json

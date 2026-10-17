@@ -1,0 +1,58 @@
+table 'Tabla Datos'
+	lineageTag: 2d561516-a3aa-4c8d-a5f9-9c34d56d0d90
+
+	column Periodo
+		dataType: string
+		lineageTag: 38d6e7a5-e834-4e26-82da-d784283f413b
+		summarizeBy: none
+		sourceColumn: Periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo Producto'
+		dataType: string
+		lineageTag: 4de3d92e-2bb2-41a4-9488-41b56311cb5d
+		summarizeBy: none
+		sourceColumn: Tipo Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: fe758788-9653-4c16-83b6-e94e15eff33d
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ingresos
+		dataType: double
+		lineageTag: 85303112-598d-46e5-861c-92590e065baf
+		summarizeBy: sum
+		sourceColumn: Ingresos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Gastos
+		dataType: double
+		lineageTag: 1c4ce6e9-9e89-4061-a0ce-918336b2e7c1
+		summarizeBy: sum
+		sourceColumn: Gastos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Tabla Datos' = m
+		mode: import
+		source =
+				let
+				  Origen = Excel.Workbook(File.Contents("D:\Users\Juan Diego\Documents\curso-powerbi\Appol\Appol Datos.xlsx"), null, true),
+				  #"Navegación 1" = Origen{[Item = "Tabla Datos", Kind = "Sheet"]}[Data],
+				  #"Encabezados promovidos" = Table.PromoteHeaders(#"Navegación 1", [PromoteAllScalars = true]),
+				  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"Periodo", type text}, {"Tipo Producto", type text}, {"Region", type text}, {"Ingresos", type number}, {"Gastos", type number}}, "es")
+				in
+				  #"Tipo de columna cambiado"
+
